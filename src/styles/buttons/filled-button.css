@@ -1,0 +1,14 @@
+.filled-button {
+    background: var(--color-site-background);
+    color: var(--color-white);
+    box-shadow: 0 0 24px 0 #ea002954;
+}
+
+.filled-button:hover {
+    background: #EA0029;
+}
+
+.filled-button:disabled {
+    background-color: #BEC5CC;
+    color: var(--color-white);
+}

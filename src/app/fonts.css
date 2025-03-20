@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "LabGrotesque";
+    src: url("../assets/fonts/lab-grotesque/LabGrotesque-Medium.woff2") format("woff2"),
+        url("../assets/fonts/lab-grotesque/LabGrotesque-Medium.woff") format("woff"),
+        url("../assets/fonts/lab-grotesque/LabGrotesque-Medium.ttf") format("ttf"),
+        url("../assets/fonts/lab-grotesque/LabGrotesque-Medium.eot") format("eot");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

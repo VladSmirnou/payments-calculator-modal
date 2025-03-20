@@ -1,0 +1,21 @@
+.button {
+    padding: 0;
+    border: 1px solid transparent;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    padding: 11px 0;
+    font-size: var(--font-size-small);
+    line-height: 16px;
+    font-weight: 500;
+    cursor: url('../../assets/icons/Pointer.svg'), pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .button {
+        padding: 15px;
+        line-height: 24px;
+        font-size: 16px;
+    }
+}

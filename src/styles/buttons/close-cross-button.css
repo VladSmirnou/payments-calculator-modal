@@ -1,0 +1,23 @@
+.close_cross_button {
+    display: block;
+    padding: 6px;
+}
+
+.close_cross_button::before {
+    display: block;
+    height: 12px;
+    width: 12px;
+    content: url(../../assets/icons/close-button-icon-small.svg);
+}
+
+@media only screen and (min-width: 768px) {
+    .close_cross_button {
+        padding: 11px;
+    }
+    
+    .close_cross_button::before {
+        content: url(../../assets/icons/close-button-icon-big.svg);
+        height: 18px;
+        width: 18px;
+    }
+}

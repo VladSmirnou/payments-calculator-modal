@@ -1,0 +1,1 @@
+export const FINAL_PRICE_SUFFIX = ' рублей';

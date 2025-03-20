@@ -1,0 +1,47 @@
+.credit_calculator {
+    flex: 1;
+}
+
+.active_option {
+    background-color: red;
+}
+
+.calculated_price {
+    display: block;
+    margin: 24px 0 38px;
+    line-height: 24px;
+    font-size: 20px;
+}
+
+.interval_options_block { 
+    margin-top: 16px;
+}
+
+.interval_options_container {
+    column-gap: 6px;
+}
+
+@media only screen and (min-width: 768px) {
+    .calculated_price {
+        font-size: 24px;
+        margin: 26px 0 33px;
+    }
+
+    .interval_options_block { 
+        flex-direction: column;
+        align-items: start;
+        row-gap: 17px;
+        margin-top: 18px;
+    }
+    
+}
+
+@media only screen and (min-width: 1440px) {
+    .interval_options_block {
+        margin-top: 22px;
+        row-gap: 11px;
+    }
+    .calculated_price {
+        margin: 31px 0 1px;
+    }
+}

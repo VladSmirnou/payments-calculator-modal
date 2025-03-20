@@ -1,0 +1,11 @@
+:root {
+    /* || COLORS */
+    --color-site-text: #000;
+    --color-site-background: #FF5E56 linear-gradient(to left, #DC3131 0%, #FF4F4F 93%);
+    --color-white: #fff;
+    --color-gray: #808080;
+
+    /* || FONTS */
+    --font-size-small: 12px;
+    --font-size-default: 14px;
+}

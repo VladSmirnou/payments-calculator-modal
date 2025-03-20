@@ -1,0 +1,21 @@
+.text_button {
+    color: #EA0029;
+    height: auto;
+    padding: 0;
+    line-height: 24px;
+    font-size: var(--font-size-default);
+    border: none;
+}
+
+.text_button:active {
+    color: #EA0029;
+}
+
+.text_button:hover {
+    color: #F53A31;
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+}

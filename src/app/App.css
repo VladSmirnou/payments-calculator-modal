@@ -1,0 +1,58 @@
+@import './normalize.css';
+@import './fonts.css';
+@import '../styles/variables.css';
+@import '../styles/input/input.css';
+@import '../styles/buttons/button.css';
+@import '../styles/buttons/filled-button.css';
+@import '../styles/buttons/transparent-button.css';
+@import '../styles/buttons/text-button.css';
+@import '../styles/buttons/tag-button.css';
+@import '../styles/buttons/close-cross-button.css';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: var(--font-size-default);
+}
+
+body {
+    font-family: "LabGrotesque", Arial, Helvetica, sans-serif;
+    line-height: 16px;
+}
+
+p {
+    color: var(--color-gray);
+}
+
+a {
+    text-decoration: none;
+}
+
+h2,
+h3 {
+    line-height: 24px;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: var(--font-size-default);
+    font-weight: 500;
+}
+
+.outer-block {
+    background: var(--color-site-background);
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
