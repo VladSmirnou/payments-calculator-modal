@@ -1,13 +1,13 @@
-import { useState, useCallback, useMemo } from "react";
-import { RUB_CURRENCY } from "constants/constants";
+import { REPLACE_INNER_SPACES } from "patterns/patterns";
+import { useCallback, useMemo, useState } from "react";
 import type { Nullable } from "types/types";
 import { formatNumber } from "utils/formatNumber/formatNumber";
+import { getRubblesPriceSuffix } from "utils/getRubblesPriceSuffix/getRubblesPriceSuffix";
 import { isWholeNumber } from "utils/isWholeNumber";
-import { DEFAULT_MONTHS_VALUE, DEFAULT_INTERVAL_VALUE, INTERVALS, MONTH_INTERVAL_KEY, YEAR_INTERVAL_KEY, ROUND_TO_WHOLE_NUMBER, ROUND_TO_TWO_DECIMALS } from "../constants";
-import type { MonthsAmount, IntervalValues, IntervalKeys } from "../types";
-import { REPLACE_INNER_SPACES } from "patterns/patterns";
+import { DEFAULT_INTERVAL_VALUE, DEFAULT_MONTHS_VALUE, INTERVALS, MONTH_INTERVAL_KEY, ROUND_TO_TWO_DECIMALS, ROUND_TO_WHOLE_NUMBER, YEAR_INTERVAL_KEY } from "../constants";
 import styles from '../credit-calculator.module.css';
-import { FINAL_PRICE_SUFFIX } from "./constants";
+import type { IntervalKeys, IntervalValues, MonthsAmount } from "../types";
+import { getLastNumber } from "utils/getLastNumber";
 
 export const useCreditCalculator = () => {
     const [price, setPrice] = useState<Nullable<string>>(null);
@@ -48,9 +48,10 @@ export const useCreditCalculator = () => {
     if (finalPrice) {
         const numericPrice = Number(finalPrice.replace(REPLACE_INNER_SPACES, ''));
         const calculatedPrice = numericPrice / monthAmount * interval;
+
         finalPrice = formatNumber({value: calculatedPrice, options: {
             maximumFractionDigits: isWholeNumber(calculatedPrice) ? ROUND_TO_WHOLE_NUMBER : ROUND_TO_TWO_DECIMALS
-        }}) + FINAL_PRICE_SUFFIX
+        }}) + getRubblesPriceSuffix(getLastNumber(calculatedPrice))
     }
 
     return {

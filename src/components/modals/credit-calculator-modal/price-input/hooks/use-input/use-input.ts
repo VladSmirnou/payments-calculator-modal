@@ -10,7 +10,7 @@ export const useInput = (args: useInputArgs) => {
     const { isCalculatedPriceSet, reset, onClick } = args
     const [value, setValue] = useState<string>('');
     const [error, setError] = useState<Nullable<string>>(null);
-    const [ref, setCursorPosition] = usePositionCursor();
+    const [inputRef, setCursorPosition] = usePositionCursor();
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const {value: inputValue, selectionEnd} = event.target;
@@ -48,7 +48,7 @@ export const useInput = (args: useInputArgs) => {
     return {
         value,
         error,
-        ref,
+        inputRef,
         handleChange,
         handleClick
     }

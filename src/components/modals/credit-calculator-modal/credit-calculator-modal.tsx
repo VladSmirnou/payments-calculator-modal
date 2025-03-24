@@ -1,34 +1,30 @@
-import { Button } from "../../button/button";
-import { CreditCalculator } from "./credit-calculator/credit-calculator";
-import { type ModalProps } from "./types";
 import cn from "classnames";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { Button } from "../../button/button";
 import { MODAL_DESCRIPTION, MODAL_SEND_BUTTON_TEXT, MODAL_TITLE } from "./constants";
 import styles from './credid-calculator-modal.module.css';
-import { useEffect } from "react";
+import { CreditCalculator } from "./credit-calculator/credit-calculator";
+import { type ModalProps } from "./types";
 
 export const CreditCalculatorModal = (props: ModalProps) => {
     const { isOpened, onClose } = props;
 
-    const handleClose = () => {
-        onClose()
-    }
-
     useEffect(() => {
         const eventHandler = (e: KeyboardEvent) => {
             if (isOpened && e.key === 'Escape' ) {
-                handleClose();
+                onClose();
             }
         }
         document.addEventListener('keydown', eventHandler)
         return () => document.removeEventListener('keydown', eventHandler)
-    }, [isOpened])
+    }, [isOpened, onClose])
 
     return (isOpened ?
         createPortal(
-            <div className={styles.modal} role="dialog" aria-modal="true" aria-labelledby="modalTitle" onClick={handleClose}>
+            <div className={styles.modal} role="dialog" aria-modal="true" aria-labelledby="modalTitle" onClick={onClose}>
                 <div className={styles.modal_wrapper} onClick={e => e.stopPropagation()}>
-                    <Button className={styles.close_button} onClick={handleClose}>
+                    <Button className={styles.close_button} onClick={onClose}>
                         <span className='close_cross_button'></span>
                     </Button>
                     <h2 className={styles.modal_title} id="modalTitle">{MODAL_TITLE}</h2>
