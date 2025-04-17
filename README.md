@@ -7,8 +7,8 @@ or
 Run via Docker -> \
 1 &nbsp;&nbsp; clone the repo \
 2 &nbsp;&nbsp; cd to the root of the project \
-3 &nbsp;&nbsp; Run ```docker image build --tag  payments-calculator-modal .``` \
-4 &nbsp;&nbsp;Run ```docker container run --rm -d --log-driver none --name payments-calculator-modal --publish 127.0.0.1:3000:3000 payments-calculator-modal``` \
+3 &nbsp;&nbsp; run ```docker image build --tag  payments-calculator-modal .``` \
+4 &nbsp;&nbsp; run ```docker container run --rm -d --log-driver none --name payments-calculator-modal --publish 127.0.0.1:3000:3000 payments-calculator-modal``` \
 5 &nbsp;&nbsp; navigate to http://127.0.0.1:3000 \
 6 &nbsp;&nbsp; stop the container and remove the image if you want \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \- ```docker container stop payments-calculator-modal``` \
